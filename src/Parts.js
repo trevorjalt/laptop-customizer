@@ -1,13 +1,14 @@
 import React from 'react';
 import slugify from 'slugify';
+import './App.css';
 
-function Options(props) {
+function Parts(props) {
     const USCurrencyFormat = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD'
     });
     
-    const options = props.features[props.feature].map(item => {
+    const parts = props.features[props.feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
 
         return (
@@ -26,6 +27,7 @@ function Options(props) {
         </div>
         );
     });
-    return options
+    return parts
 }
-export default Options
+
+export default Parts
